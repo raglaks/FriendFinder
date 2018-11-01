@@ -17,7 +17,7 @@ const ModAPI = function () {
 
         });
 
-    },
+    }
 
 }
 
