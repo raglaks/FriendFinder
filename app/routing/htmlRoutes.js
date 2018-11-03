@@ -36,6 +36,16 @@ const Display = function () {
             console.log("App listening on PORT " + PORT);
         });
 
+    },
+
+    this.getAPI = function () {
+
+        app.get("/api/friends", function (req, res) {
+
+            console.log(res); 
+
+        })
+
     }
 
 }
