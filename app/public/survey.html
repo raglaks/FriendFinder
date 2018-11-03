@@ -280,4 +280,39 @@
 
 </body>
 
+<script>
+
+    $("#submit").on("click", function (event) {
+
+        event.preventDefault();
+
+        let resultsArr = [];
+
+        resultsArr.push($("#q1").val().trim());
+        resultsArr.push($("#q2").val().trim());
+        resultsArr.push($("#q3").val().trim());
+        resultsArr.push($("#q4").val().trim());
+        resultsArr.push($("#q5").val().trim());
+        resultsArr.push($("#q6").val().trim());
+        resultsArr.push($("#q7").val().trim());
+        resultsArr.push($("#q8").val().trim());
+        resultsArr.push($("#q9").val().trim());
+        resultsArr.push($("#q10").val().trim());
+
+        let newRes = {
+            name: $("#name").val().trim(),
+            pic: $("#pic").val().trim(),
+            resultsArr,
+        }
+
+        $.post("/api/friends", newRes).then(function (data) {
+
+            console.log("recording results...");
+
+        });
+
+    });
+
+</script>
+
 </html>

@@ -13,7 +13,7 @@ const ModAPI = function () {
 
         app.get("/api/friends", function (req, res) {
 
-            res.sendFile(path.join(__dirname, "../public/survey.html"));
+            return res.json(waitArr);
 
         });
 
@@ -21,3 +21,4 @@ const ModAPI = function () {
 
 }
 
+module.exports = ModAPI;
