@@ -42,7 +42,7 @@ const Display = function () {
 
         app.post("/api/friends", function (req, res) {
 
-            console.log(res.body); 
+            console.log(req.body); 
 
         });
 
