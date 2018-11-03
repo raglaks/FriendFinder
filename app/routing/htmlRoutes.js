@@ -44,6 +44,15 @@ const Display = function () {
 
             console.log(req.body); 
 
+            let resObj = req.body;
+
+            fs.writeFile("../data/friends.js", resObj, (err) => {  
+                
+                if (err) throw err;
+                
+                console.log("answers recorded...");
+            });
+
         });
 
     }
