@@ -304,7 +304,7 @@
             resultsArr,
         }
 
-        $.ajax("/api/friends", newRes).then(function (data) {
+        $.post("/api/friends", newRes).then(function (data) {
 
             console.log("recording results...");
 

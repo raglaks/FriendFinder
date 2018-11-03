@@ -7,5 +7,6 @@ let apiRoutes = new ModAPI();
 htmlRoutes.dispSurvey();
 //htmlRoutes.dispElse();
 htmlRoutes.listenDisp();
+htmlRoutes.getAPI();
 
 apiRoutes.dispAPI();
