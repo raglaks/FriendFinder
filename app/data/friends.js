@@ -1,3 +1,3 @@
-const test = {
-    h1: "h1"
-}
+const resArray = [];
+
+module.exports = resArray;

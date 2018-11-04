@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const resArray = require("../data/friends");
 
 const app = express();
 const PORT = 3050;
@@ -11,11 +12,18 @@ const ModAPI = function () {
 
     this.dispAPI = function () {
 
-        app.get("/api/friends", function (req, res) {
+        let resObj = req.body;
 
-            return res.json(waitArr);
+        // fs.writeFile("../data/friends.js", resObj, (err) => {
 
-        });
+        //     if (err) throw err;
+
+        //     console.log("answers recorded...");
+        // });
+
+        console.log(resArray);
+
+        console.log(resObj);
 
     }
 
