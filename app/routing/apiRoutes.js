@@ -8,22 +8,19 @@ const PORT = 3050;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const ModAPI = function () {
+const ModAPI =  {
 
-    this.dispAPI = function () {
+    tdispAPI: function () {
 
-        let resObj = req.body;
+        app.post("/api/friends", function (req, res) {
 
-        // fs.writeFile("../data/friends.js", resObj, (err) => {
+            let resObj = req.body;
 
-        //     if (err) throw err;
+            console.log(resArray);
 
-        //     console.log("answers recorded...");
-        // });
+            console.log(resObj);
 
-        console.log(resArray);
-
-        console.log(resObj);
+        });
 
     }
 
