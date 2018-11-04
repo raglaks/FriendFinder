@@ -8,9 +8,9 @@ const PORT = 3050;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const Display = function () {
+const display = {
 
-    this.dispSurvey = function () {
+    dispSurvey: function () {
 
         app.get("/survey", function (req, res) {
 
@@ -20,7 +20,7 @@ const Display = function () {
 
     },
 
-    this.dispElse = function () {
+    dispElse: function () {
 
         app.get("*", function (req, res) {
 
@@ -30,7 +30,7 @@ const Display = function () {
 
     },
 
-    this.listenDisp = function () {
+    listenDisp: function () {
 
         app.listen(PORT, function () {
 
@@ -39,7 +39,7 @@ const Display = function () {
 
     },
 
-    this.getAPI = function () {
+    getAPI: function () {
 
         app.get("/api/friends", function (req, res) {
 
@@ -60,4 +60,4 @@ const Display = function () {
 
 }
 
-module.exports = Display;
+module.exports = display;

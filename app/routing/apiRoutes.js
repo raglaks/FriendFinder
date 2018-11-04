@@ -8,7 +8,7 @@ const PORT = 3050;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const ModAPI =  {
+const modAPI =  {
 
     tdispAPI: function () {
 
@@ -26,4 +26,4 @@ const ModAPI =  {
 
 }
 
-module.exports = ModAPI;
+module.exports = modAPI;
