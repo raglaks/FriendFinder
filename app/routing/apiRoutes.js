@@ -10,7 +10,7 @@ app.use(express.json());
 
 const modAPI =  {
 
-    tdispAPI: function () {
+    dispAPI: function () {
 
         app.post("/api/friends", function (req, res) {
 

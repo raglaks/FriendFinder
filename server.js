@@ -1,12 +1,9 @@
-const Display = require("./app/routing/htmlRoutes.js");
-const ModAPI = require("./app/routing/apiRoutes");
+const display = require("./app/routing/htmlRoutes.js");
+const modAPI = require("./app/routing/apiRoutes");
 
-let htmlRoutes = new Display();
-let apiRoutes = new ModAPI();
+display.dispSurvey();
 
-htmlRoutes.dispSurvey();
-//htmlRoutes.dispElse();
-htmlRoutes.listenDisp();
-//htmlRoutes.getAPI();
+display.createAPI();
+display.getAPI();
 
-apiRoutes.dispAPI();
+display.listenDisp();

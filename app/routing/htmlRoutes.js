@@ -10,6 +10,8 @@ app.use(express.json());
 
 const display = {
 
+    resObj: [],
+
     dispSurvey: function () {
 
         app.get("/survey", function (req, res) {
@@ -35,6 +37,7 @@ const display = {
         app.listen(PORT, function () {
 
             console.log("App listening on PORT " + PORT);
+            
         });
 
     },
@@ -43,16 +46,25 @@ const display = {
 
         app.get("/api/friends", function (req, res) {
 
-            console.log(req.body); 
+            res.send(display.resObj);
 
-            let resObj = req.body;
+        });
 
-            fs.writeFile("../data/friends.js", resObj, (err) => {  
-                
-                if (err) throw err;
-                
-                console.log("answers recorded...");
-            });
+    },
+
+    createAPI: function () {
+
+        app.post("/api/friends", function (req, res) {
+
+            let result = req.body;
+
+            console.log(result);
+
+            console.log(display.resObj);
+
+            display.resObj.push(result);
+
+            console.log(display.resObj);
 
         });
 
