@@ -58,13 +58,14 @@ const display = {
 
             let result = req.body;
 
-            console.log(result);
-
-            console.log(display.resObj);
-
             display.resObj.push(result);
+            
+            fs.writeFile(path.join(__dirname, "../data/friends.txt"), JSON.stringify(display.resObj), function (err, data) {
 
-            console.log(display.resObj);
+                if (err) throw err;
+    
+                console.log("updated friends.txt");
+            });
 
         });
 
