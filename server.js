@@ -3,7 +3,9 @@ const modAPI = require("./app/routing/apiRoutes");
 
 display.dispSurvey();
 
+display.getFriends();
+
 display.createAPI();
-display.getAPI();
+
 
 display.listenDisp();

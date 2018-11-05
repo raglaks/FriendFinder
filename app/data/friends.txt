@@ -1,1 +1,1 @@
-[{"name":"a","pic":"1","resultsArr":["Rate","3","Rate","Rate","Rate","Rate","Rate","Rate","Rate","Rate"]},{"name":"aa","pic":"s","resultsArr":["5","1","3","2","3","2","4","2","2","2"]}]
+[{"name":"aaa","pic":"sss","resultsArr":["4","3","3","4","2","3","3","3","2","3"]},{"name":"ic","pic":"cre","resultsArr":["3","3","3","3","3","2","4","5","5","4"]},{"name":"stock","pic":"aaa","resultsArr":["3","2","3","1","3","2","3","2","3","3"]}]

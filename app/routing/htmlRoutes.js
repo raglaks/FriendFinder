@@ -37,12 +37,42 @@ const display = {
         app.listen(PORT, function () {
 
             console.log("App listening on PORT " + PORT);
-            
+
         });
 
     },
 
     getAPI: function () {
+
+        app.get("/api/friends", function (req, res) {
+
+            res.send(display.resObj);
+
+        });
+
+    },
+
+    getFriends: function () {
+
+        fs.readFile(path.join(__dirname, "../data/friends.txt"), "utf8", function (err, data) {
+
+            console.log(data);
+
+            if (err) throw err;
+
+            if (data) {
+
+                display.resObj = JSON.parse(data);
+
+                console.log(display.resObj);
+
+            } else {
+
+                console.log("input data--API is empty");
+
+            }
+
+        });
 
         app.get("/api/friends", function (req, res) {
 
@@ -59,11 +89,11 @@ const display = {
             let result = req.body;
 
             display.resObj.push(result);
-            
+
             fs.writeFile(path.join(__dirname, "../data/friends.txt"), JSON.stringify(display.resObj), function (err, data) {
 
                 if (err) throw err;
-    
+
                 console.log("updated friends.txt");
             });
 
