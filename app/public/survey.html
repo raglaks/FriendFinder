@@ -285,18 +285,40 @@
 
         event.preventDefault();
 
+        let q1 = $("#q1").val().trim();
+        let q2 = $("#q2").val().trim();
+        let q3 = $("#q3").val().trim();
+        let q4 = $("#q4").val().trim();
+        let q5 = $("#q5").val().trim();
+        let q6 = $("#q6").val().trim();
+        let q7 = $("#q7").val().trim();
+        let q8 = $("#q8").val().trim();
+        let q9 = $("#q9").val().trim();
+        let q10 = $("#q10").val().trim();
+
         let resultsArr = [];
 
-        resultsArr.push($("#q1").val().trim());
-        resultsArr.push($("#q2").val().trim());
-        resultsArr.push($("#q3").val().trim());
-        resultsArr.push($("#q4").val().trim());
-        resultsArr.push($("#q5").val().trim());
-        resultsArr.push($("#q6").val().trim());
-        resultsArr.push($("#q7").val().trim());
-        resultsArr.push($("#q8").val().trim());
-        resultsArr.push($("#q9").val().trim());
-        resultsArr.push($("#q10").val().trim());
+        // resultsArr.push($("#q1").val().trim());
+        // resultsArr.push($("#q2").val().trim());
+        // resultsArr.push($("#q3").val().trim());
+        // resultsArr.push($("#q4").val().trim());
+        // resultsArr.push($("#q5").val().trim());
+        // resultsArr.push($("#q6").val().trim());
+        // resultsArr.push($("#q7").val().trim());
+        // resultsArr.push($("#q8").val().trim());
+        // resultsArr.push($("#q9").val().trim());
+        // resultsArr.push($("#q10").val().trim());
+
+        resultsArr.push(q1);
+        resultsArr.push(q2);
+        resultsArr.push(q3);
+        resultsArr.push(q4);
+        resultsArr.push(q5);
+        resultsArr.push(q6);
+        resultsArr.push(q7);
+        resultsArr.push(q8);
+        resultsArr.push(q9);
+        resultsArr.push(q10);
 
         let newRes = {
             name: $("#name").val().trim(),
