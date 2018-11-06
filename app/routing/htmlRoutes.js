@@ -42,16 +42,6 @@ const display = {
 
     },
 
-    getAPI: function () {
-
-        app.get("/api/friends", function (req, res) {
-
-            res.send(display.resObj);
-
-        });
-
-    },
-
     getFriends: function () {
 
         fs.readFile(path.join(__dirname, "../data/friends.txt"), "utf8", function (err, data) {
