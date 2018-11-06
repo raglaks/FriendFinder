@@ -300,44 +300,72 @@
 
         let resultsArr = [];
 
-        let check = [];
+        let qs = [];
 
         let newRes;
 
-        // if (($("form").val() !== " ") || ($("form").val() !== "Enter name") || ($("form").val() !== "Link to pic")) {
+        function checkOptions() {
 
-        //     resultsArr.push(q1);
-        //     resultsArr.push(q2);
-        //     resultsArr.push(q3);
-        //     resultsArr.push(q4);
-        //     resultsArr.push(q5);
-        //     resultsArr.push(q6);
-        //     resultsArr.push(q7);
-        //     resultsArr.push(q8);
-        //     resultsArr.push(q9);
-        //     resultsArr.push(q10);
+            qs.push(q1);
+            qs.push(q2);
+            qs.push(q3);
+            qs.push(q4);
+            qs.push(q5);
+            qs.push(q6);
+            qs.push(q7);
+            qs.push(q8);
+            qs.push(q9);
+            qs.push(q10);
 
-        //     newRes = {
-        //         name: friendName,
-        //         pic: friendPic,
-        //         resultsArr,
-        //     }
+            function allTrue(n) {
 
-        //     $.post("/api/friends", newRes).then(function (data) {
+                if (n === "Rate" || n === " ") {
 
-        //         console.log("recording results...");
+                    return false;
 
-        //         console.log(data);
+                } else {
 
-        //     });
+                    return true;
 
-        // } else {
+                }
 
-        //     alert("please fill everything");
+            }
 
-        // }
+            let noRB = qs.every(allTrue);
 
-        console.log(friendName.length, friendPic.length);
+            if (noRB === true) {
+
+                console.log(noRB);
+                console.log("checked");
+
+                qs.forEach(element => {
+
+                    resultsArr.push(element);
+
+                });
+
+                newRes = {
+                    name: friendName,
+                    pic: friendPic,
+                    resultsArr,
+                }
+
+                $.post("/api/friends", newRes).then(function (data) {
+
+                    console.log("recording results...");
+
+                    console.log(data);
+
+                });
+
+            } else {
+
+                alert("fill all");
+                console.log(noRB);
+
+            }
+
+        }
 
         if (friendName.length > 0 && friendPic.length > 0) {
 
@@ -345,87 +373,13 @@
 
             console.log(friendName, friendPic);
 
+            checkOptions();
+
         } else {
 
             alert("fill erry");
 
         }
-
-        //console.log($("form").val());
-        //console.log($("select").each());
-        // if (($("select").val() === "Rate") || ($("select").val() === "") || ($("form").val() === "")) {
-
-        //     alert("please fill everything");
-
-        // } else {
-
-        //     resultsArr.push(q1);
-        //     resultsArr.push(q2);
-        //     resultsArr.push(q3);
-        //     resultsArr.push(q4);
-        //     resultsArr.push(q5);
-        //     resultsArr.push(q6);
-        //     resultsArr.push(q7);
-        //     resultsArr.push(q8);
-        //     resultsArr.push(q9);
-        //     resultsArr.push(q10);
-
-        //     newRes = {
-        //         name: friendName,
-        //         pic: friendPic,
-        //         resultsArr,
-        //     }
-
-        //     $.post("/api/friends", newRes).then(function (data) {
-
-        //         console.log("recording results...");
-
-        //         console.log(data);
-
-        //     });
-
-        // }
-
-        // check.push(friendName);
-        // check.push(friendPic);
-
-        // qs.push(q1);
-        // qs.push(q2);
-        // qs.push(q3);
-        // qs.push(q4);
-        // qs.push(q5);
-        // qs.push(q6);
-        // qs.push(q7);
-        // qs.push(q8);
-        // qs.push(q9);
-        // qs.push(q10);
-
-        // qs.forEach(element => {
-
-        //     console.log(element);
-
-        //     if (element !== "Rate" && element !== "") {
-
-        //         resultsArr.push(element);
-
-        //     } else {
-
-        //         alert("please answer all q's");
-
-        //     }
-
-        // });
-
-        // resultsArr.push(q1);
-        // resultsArr.push(q2);
-        // resultsArr.push(q3);
-        // resultsArr.push(q4);
-        // resultsArr.push(q5);
-        // resultsArr.push(q6);
-        // resultsArr.push(q7);
-        // resultsArr.push(q8);
-        // resultsArr.push(q9);
-        // resultsArr.push(q10);
 
         // $("#name").val("");
         // $("#pic").val("");
