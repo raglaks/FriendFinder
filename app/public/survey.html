@@ -285,6 +285,8 @@
 
         event.preventDefault();
 
+        let friendName = $("#name").val().trim();
+        let friendPic = $("#pic").val().trim();
         let q1 = $("#q1").val().trim();
         let q2 = $("#q2").val().trim();
         let q3 = $("#q3").val().trim();
@@ -298,54 +300,145 @@
 
         let resultsArr = [];
 
-        // resultsArr.push($("#q1").val().trim());
-        // resultsArr.push($("#q2").val().trim());
-        // resultsArr.push($("#q3").val().trim());
-        // resultsArr.push($("#q4").val().trim());
-        // resultsArr.push($("#q5").val().trim());
-        // resultsArr.push($("#q6").val().trim());
-        // resultsArr.push($("#q7").val().trim());
-        // resultsArr.push($("#q8").val().trim());
-        // resultsArr.push($("#q9").val().trim());
-        // resultsArr.push($("#q10").val().trim());
+        let check = [];
 
-        resultsArr.push(q1);
-        resultsArr.push(q2);
-        resultsArr.push(q3);
-        resultsArr.push(q4);
-        resultsArr.push(q5);
-        resultsArr.push(q6);
-        resultsArr.push(q7);
-        resultsArr.push(q8);
-        resultsArr.push(q9);
-        resultsArr.push(q10);
+        let newRes;
 
-        let newRes = {
-            name: $("#name").val().trim(),
-            pic: $("#pic").val().trim(),
-            resultsArr,
+        // if (($("form").val() !== " ") || ($("form").val() !== "Enter name") || ($("form").val() !== "Link to pic")) {
+
+        //     resultsArr.push(q1);
+        //     resultsArr.push(q2);
+        //     resultsArr.push(q3);
+        //     resultsArr.push(q4);
+        //     resultsArr.push(q5);
+        //     resultsArr.push(q6);
+        //     resultsArr.push(q7);
+        //     resultsArr.push(q8);
+        //     resultsArr.push(q9);
+        //     resultsArr.push(q10);
+
+        //     newRes = {
+        //         name: friendName,
+        //         pic: friendPic,
+        //         resultsArr,
+        //     }
+
+        //     $.post("/api/friends", newRes).then(function (data) {
+
+        //         console.log("recording results...");
+
+        //         console.log(data);
+
+        //     });
+
+        // } else {
+
+        //     alert("please fill everything");
+
+        // }
+
+        console.log(friendName.length, friendPic.length);
+
+        if (friendName.length > 0 && friendPic.length > 0) {
+
+            console.log("ok");
+
+            console.log(friendName, friendPic);
+
+        } else {
+
+            alert("fill erry");
+
         }
 
-        $.post("/api/friends", newRes).then(function (data) {
+        //console.log($("form").val());
+        //console.log($("select").each());
+        // if (($("select").val() === "Rate") || ($("select").val() === "") || ($("form").val() === "")) {
 
-            console.log("recording results...");
+        //     alert("please fill everything");
 
-            console.log(data);
+        // } else {
 
-        });
+        //     resultsArr.push(q1);
+        //     resultsArr.push(q2);
+        //     resultsArr.push(q3);
+        //     resultsArr.push(q4);
+        //     resultsArr.push(q5);
+        //     resultsArr.push(q6);
+        //     resultsArr.push(q7);
+        //     resultsArr.push(q8);
+        //     resultsArr.push(q9);
+        //     resultsArr.push(q10);
 
-        $("#name").val("");
-        $("#pic").val("");
-        $("#q1").val("");
-        $("#q2").val("");
-        $("#q3").val("");
-        $("#q4").val("");
-        $("#q5").val("");
-        $("#q6").val("");
-        $("#q7").val("");
-        $("#q8").val("");
-        $("#q9").val("");
-        $("#q10").val("");
+        //     newRes = {
+        //         name: friendName,
+        //         pic: friendPic,
+        //         resultsArr,
+        //     }
+
+        //     $.post("/api/friends", newRes).then(function (data) {
+
+        //         console.log("recording results...");
+
+        //         console.log(data);
+
+        //     });
+
+        // }
+
+        // check.push(friendName);
+        // check.push(friendPic);
+
+        // qs.push(q1);
+        // qs.push(q2);
+        // qs.push(q3);
+        // qs.push(q4);
+        // qs.push(q5);
+        // qs.push(q6);
+        // qs.push(q7);
+        // qs.push(q8);
+        // qs.push(q9);
+        // qs.push(q10);
+
+        // qs.forEach(element => {
+
+        //     console.log(element);
+
+        //     if (element !== "Rate" && element !== "") {
+
+        //         resultsArr.push(element);
+
+        //     } else {
+
+        //         alert("please answer all q's");
+
+        //     }
+
+        // });
+
+        // resultsArr.push(q1);
+        // resultsArr.push(q2);
+        // resultsArr.push(q3);
+        // resultsArr.push(q4);
+        // resultsArr.push(q5);
+        // resultsArr.push(q6);
+        // resultsArr.push(q7);
+        // resultsArr.push(q8);
+        // resultsArr.push(q9);
+        // resultsArr.push(q10);
+
+        // $("#name").val("");
+        // $("#pic").val("");
+        // $("#q1").val("");
+        // $("#q2").val("");
+        // $("#q3").val("");
+        // $("#q4").val("");
+        // $("#q5").val("");
+        // $("#q6").val("");
+        // $("#q7").val("");
+        // $("#q8").val("");
+        // $("#q9").val("");
+        // $("#q10").val("");
 
     });
 
