@@ -26,10 +26,4 @@ function readAPI() {
 
 }
 
-function compare() {
-
-    
-
-}
-
 readAPI();

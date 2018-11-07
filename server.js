@@ -7,5 +7,6 @@ display.getFriends();
 
 display.createAPI();
 
+display.dispElse();
 
 display.listenDisp();
