@@ -16,9 +16,9 @@ const modAPI =  {
 
             let resObj = req.body;
 
-            console.log(resArray);
+            //console.log(resArray);
 
-            console.log(resObj);
+            //console.log(resObj);
 
         });
 

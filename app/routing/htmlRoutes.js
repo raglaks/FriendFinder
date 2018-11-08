@@ -46,7 +46,7 @@ const display = {
 
         fs.readFile(path.join(__dirname, "../data/friends.txt"), "utf8", function (err, data) {
 
-            console.log(data);
+            //console.log(data);
 
             if (err) throw err;
 
@@ -54,7 +54,7 @@ const display = {
 
                 display.resObj = JSON.parse(data);
 
-                console.log(display.resObj);
+                //console.log(display.resObj);
 
             } else {
 
