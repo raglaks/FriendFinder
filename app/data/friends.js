@@ -74,7 +74,6 @@ module.exports = function readAPI() {
             }
 
             console.log(`Your best match: ${JSON.stringify(compare[ind].name)}\nThey look like: ${JSON.stringify(compare[ind].pic)}`);
-            
 
         } else {
 
