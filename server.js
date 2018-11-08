@@ -1,7 +1,7 @@
 const express = require("express");
 
 const app = express();
-const PORT = 3050;
+const PORT = process.env.PORT || 3050;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -17,8 +17,14 @@ apiRoutes.createAPI(app);
 
 htmlRoutes.dispElse(app);
 
+// app.listen(PORT, function () {
+
+//     console.log("App listening on PORT " + PORT);
+
+// });
+
 app.listen(PORT, function () {
 
-    console.log("App listening on PORT " + PORT);
-
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
+
