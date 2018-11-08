@@ -3,8 +3,10 @@ const fs = require("file-system");
 
 const modAPI = {
 
+    //this is where the entire object from friends.txt is stored locally
     resObj: [],
 
+    //this method is responsible for /api/friends 
     getFriends: function (app) {
 
         fs.readFile(path.join(__dirname, "../data/friends.txt"), "utf8", function (err, data) {
@@ -31,6 +33,7 @@ const modAPI = {
 
     },
 
+    //this method posts to friends.txt and also send back a result to the survery taker
     createAPI: function (app) {
 
         app.post("/api/friends", function (req, res) {
@@ -39,12 +42,14 @@ const modAPI = {
 
             modAPI.resObj.push(result);
 
+            //this is how entries are added to DB
             fs.writeFile(path.join(__dirname, "../data/friends.txt"), JSON.stringify(modAPI.resObj), function (err, data) {
 
                 if (err) throw err;
 
                 console.log("updated friends.txt");
 
+                //this is where the logic for comparing current user to all other user in DB takes place
                 fs.readFile(path.join(__dirname, "../data/friends.txt"), "utf8", function (err, data) {
 
                     let compare;
@@ -116,6 +121,7 @@ const modAPI = {
 
                         console.log(`Your best match: ${JSON.stringify(compare[ind].name)}`);
 
+                        //this is where the result of the post gets sent back to the html file so that it can be displayed in modal pop up
                         res.json(compare[ind]);
 
                     } else {
