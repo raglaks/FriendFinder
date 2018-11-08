@@ -1,12 +1,24 @@
-const display = require("./app/routing/htmlRoutes.js");
-const modAPI = require("./app/routing/apiRoutes");
+const express = require("express");
 
-display.dispSurvey();
+const app = express();
+const PORT = 3050;
 
-display.getFriends();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-display.createAPI();
+const htmlRoutes = require("./app/routing/htmlRoutes.js");
+const apiRoutes = require("./app/routing/apiRoutes");
 
-display.dispElse();
+htmlRoutes.dispSurvey(app);
 
-display.listenDisp();
+apiRoutes.getFriends(app);
+
+apiRoutes.createAPI(app);
+
+htmlRoutes.dispElse(app);
+
+app.listen(PORT, function () {
+
+    console.log("App listening on PORT " + PORT);
+
+});

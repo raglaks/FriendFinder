@@ -1,24 +1,50 @@
 const path = require("path");
-const express = require("express");
-const resArray = require("../data/friends");
+const fs = require("file-system");
 
-const app = express();
-const PORT = 3050;
+const modAPI = {
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+    resObj: [],
 
-const modAPI =  {
+    getFriends: function (app) {
 
-    dispAPI: function () {
+        fs.readFile(path.join(__dirname, "../data/friends.txt"), "utf8", function (err, data) {
+
+            if (err) throw err;
+
+            if (data) {
+
+                resObj = JSON.parse(data);
+
+            } else {
+
+                console.log("input data--API is empty");
+
+            }
+
+        });
+
+        app.get("/api/friends", function (req, res) {
+
+            res.send(resObj);
+
+        });
+
+    },
+
+    createAPI: function (app) {
 
         app.post("/api/friends", function (req, res) {
 
-            let resObj = req.body;
+            let result = req.body;
 
-            //console.log(resArray);
+            resObj.push(result);
 
-            //console.log(resObj);
+            fs.writeFile(path.join(__dirname, "../data/friends.txt"), JSON.stringify(resObj), function (err, data) {
+
+                if (err) throw err;
+
+                console.log("updated friends.txt");
+            });
 
         });
 
