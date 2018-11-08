@@ -9,6 +9,8 @@ app.use(express.json());
 const htmlRoutes = require("./app/routing/htmlRoutes.js");
 const apiRoutes = require("./app/routing/apiRoutes");
 
+const friendsData = require("./app/data/friends.js");
+
 htmlRoutes.dispSurvey(app);
 
 apiRoutes.getFriends(app);

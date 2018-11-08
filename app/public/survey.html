@@ -335,9 +335,6 @@
 
             if (noRB === true) {
 
-                console.log(noRB);
-                console.log("checked");
-
                 qs.forEach(element => {
 
                     resultsArr.push(element);
@@ -352,7 +349,7 @@
 
                 $.post("/api/friends", newRes).then(function (data) {
 
-                    console.log("recording results...");
+                    console.log("Recording results...");
 
                     console.log(data);
 
@@ -373,7 +370,7 @@
 
             } else {
 
-                alert("fill all");
+                alert("Please fill ALL fields.");
                 console.log(noRB);
 
             }
@@ -382,15 +379,11 @@
 
         if (friendName.length > 0 && friendPic.length > 0) {
 
-            console.log("ok");
-
-            console.log(friendName, friendPic);
-
             checkOptions();
 
         } else {
 
-            alert("fill erry");
+            alert("Please fill ALL fields.");
 
         }
 
