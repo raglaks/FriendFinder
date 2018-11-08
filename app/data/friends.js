@@ -1,11 +1,11 @@
 const fs = require("file-system");
 const path = require("path");
 
-let compare;
+module.exports = function readAPI() {
 
-function readAPI() {
+    let compare;
 
-    fs.readFile(path.join(__dirname, "../data/friends.txt"), "utf8", function (err, data) {
+    fs.readFile(path.join(__dirname, "./friends.txt"), "utf8", function (err, data) {
 
         if (err) throw err;
 
@@ -85,5 +85,3 @@ function readAPI() {
     });
 
 }
-
-readAPI();

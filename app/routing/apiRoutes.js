@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("file-system");
+const friendsData = require("../data/friends.js");
 
 const modAPI = {
 
@@ -45,6 +46,8 @@ const modAPI = {
 
                 console.log("updated friends.txt");
             });
+
+            friendsData();
 
         });
 
